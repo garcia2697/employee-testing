@@ -239,7 +239,7 @@ const generateHTML = (employees) => {
         
         <div class = "text-bg-primary mb-3">
             <h5 class="card-title"></h5>
-            <img src="..." class="card-img-top" alt="...">
+            
             <p class="card-text">Manager</p>  
         </div>
 
@@ -258,13 +258,13 @@ const generateHTML = (employees) => {
         
 
     </div>
-
+    <br>
     <div class="card " style="width: 18rem;">
         
         
         <div class = "text-bg-primary mb-3">
             <h5 class="card-title"></h5>
-            <img src="..." class="card-img-top" alt="...">
+    
             <p class="card-text">Engineer</p>  
         </div>
 
@@ -284,12 +284,13 @@ const generateHTML = (employees) => {
 
     </div>
 
+    <br>
     <div class="card " style="width: 18rem;">
         
         
         <div class = "text-bg-primary mb-3">
             <h5 class="card-title"></h5>
-            <img src="..." class="card-img-top" alt="...">
+    
             <p class="card-text">Intern</p>  
         </div>
 
