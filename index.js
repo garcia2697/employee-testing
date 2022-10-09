@@ -207,6 +207,7 @@ const generateHTML = (employees) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Employee</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      <link rel="stylesheet" href="../assets/style.css">
   </head>
   <body>
 
@@ -232,13 +233,14 @@ const generateHTML = (employees) => {
   </header>  
       
   <main>
+    <br>
     <div class="card " style="width: 18rem;">
         
         
         <div class = "text-bg-primary mb-3">
             <h5 class="card-title"></h5>
             <img src="..." class="card-img-top" alt="...">
-            <p class="card-text"></p>  
+            <p class="card-text">Manager</p>  
         </div>
 
         <div class="card-body"> 
@@ -253,16 +255,42 @@ const generateHTML = (employees) => {
             <br>
         </div>
 
+        
+
+    </div>
+
+    <div class="card " style="width: 18rem;">
+        
+        
+        <div class = "text-bg-primary mb-3">
+            <h5 class="card-title"></h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text">Engineer</p>  
+        </div>
+
         <div class="card-body"> 
             <div>
                 <ul class="list-group">
                     <li class="list-group-item">Name:${employees[1].name}:</li>
                     <li class="list-group-item">ID:${employees[1].id}:</li>
                     <li class="list-group-item">Email:<a href="mailto:${employees[1].email}"> ${employees[1].email}<a></li>
-                    <li class="list-group-item">GitHub:<a href="https://github.com/garcia2697"> ${employees[1].github}</li>
+                    <li class="list-group-item">GitHub:<a href="https://github.com/${employees[1].github}"> ${employees[1].github}</li>
                 </ul>
             </div>
             <br>
+        </div>
+
+        
+
+    </div>
+
+    <div class="card " style="width: 18rem;">
+        
+        
+        <div class = "text-bg-primary mb-3">
+            <h5 class="card-title"></h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text">Intern</p>  
         </div>
 
         <div class="card-body"> 
@@ -277,6 +305,8 @@ const generateHTML = (employees) => {
             <br>
         </div>
 
+        
+
     </div>
 
       
@@ -287,3 +317,7 @@ const generateHTML = (employees) => {
     
 };
     
+
+
+
+        
