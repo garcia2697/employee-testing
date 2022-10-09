@@ -9,7 +9,9 @@ const generatePage = require('./src/page-template.js');
 
 // initializes employee array
 const employees = [];
-
+this.manager=[];
+this.engineer=[];
+this.intern=[];
 
 // asks you what employee you want to add
 const promptUser = () => {
@@ -62,27 +64,12 @@ addManager= () =>{
         message:'What is your office number?'
         }   
     ])
-
-
-    // .then((managerResponses)=>{
-    //     managerResponses.role="Manager";
-    //     const {name, id, email, office, role}=managerResponses;
-    //     const newManager = new Manager(name,id,email,office,role);
-    //     employees.push(newManager);
-    // })
-
-    .then((managerResponses)=>{
-        const newManager = new Manager(
-            managerResponses.name,managerResponses.id,managerResponses.email,managerResponses.office,managerResponses.role
-        )
-        managerResponses.role="Manager";
-        
-        
-        employees.push(newManager);
-        console.log(managerResponses);
-    }) 
-
-
+    .then(userData =>{
+        this.manager= new Manager(userData.name, userData.email, userData.id,userData.office)
+        this.manager.getRole();
+        employees.push(this.manager);
+        console.log(employees)
+    })
     .then(addUsers)
     
     
@@ -114,11 +101,11 @@ addEngineer= () =>{
         message:'What is your github username?'
         }   
     ])
-    .then((engineerResponses)=>{
-        engineerResponses.role="Engineer";
-        const {name, id, email, github, role}=engineerResponses;
-        const newEngineer = new Engineer(name,id,email,github,role);
-        employees.push(newEngineer);
+    .then(userData =>{
+        this.engineer= new Engineer(userData.name, userData.email, userData.id,userData.github)
+        this.engineer.getRole();
+        employees.push(this.engineer);
+        console.log(employees)
     })
     .then(addUsers)
     
@@ -147,19 +134,18 @@ addIntern = () => {
         message:'What school do you attend?'
         }   
     ])
-
-
-    .then((internResponses)=>{
-        internResponses.role="Intern";
-        const {name, id, email, school, role}=internResponses;
-        const newIntern = new Intern(name,id,email,school,role);
-        employees.push(newIntern);
+    .then(userData =>{
+        this.intern= new Intern(userData.name, userData.email, userData.id,userData.school)
+        this.intern.getRole();
+        employees.push(this.intern);
+        console.log(employees)
     })
     .then(addUsers)
     
     
 }
 
+// Function confirms if you want to add another user or finish all the users.
 addUsers = () => {
     
     return inquirer
@@ -183,6 +169,7 @@ addUsers = () => {
 };
 
 
+// generates the page using the generateHTML function, distributes it into the dist folder.
 generates= () =>{
     const pageHTML= generateHTML(employees);
     console.log( employees);
@@ -195,29 +182,21 @@ generates= () =>{
     });
 }
 
-test = (employees)=>{
-    console.log(employees.addManager.managerResponses)
-}
 
 
-
-
+// starts the user 
 promptUser()
-
 .then(generates)
 
-// .then(test)
 
 
 
 
 
 
-// the main issue here, been trying to generate the response to manager but keep having issues since it comes out as undefined. I'm trying to at least generate name.
+// originally in the generatepage file in the src folder. It was brought into the index for ease of use.
 
 const generateHTML = (employees) => {
-    // const { users, ...data } = templateData;
-  
 
   return `
     <!DOCTYPE html>
@@ -253,9 +232,9 @@ const generateHTML = (employees) => {
   </header>  
       
   <main>
-      <div class="card " style="width: 18rem;">
-          
-          
+    <div class="card " style="width: 18rem;">
+        
+        
         <div class = "text-bg-primary mb-3">
             <h5 class="card-title"></h5>
             <img src="..." class="card-img-top" alt="...">
@@ -265,15 +244,39 @@ const generateHTML = (employees) => {
         <div class="card-body"> 
             <div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name:${employees.managerResponses}:</li>
-                    <li class="list-group-item">Email:</li>
-                    <li class="list-group-item">Office Number:  </li>
+                    <li class="list-group-item">Name:${employees[0].name}:</li>
+                    <li class="list-group-item">ID:${employees[0].id}:</li>
+                    <li class="list-group-item">Email:<a href="mailto:${employees[0].email}">${employees[0].email}<a></li>
+                    <li class="list-group-item">Office Number:${employees[0].office}  </li>
                 </ul>
             </div>
             <br>
-        
-        
         </div>
+
+        <div class="card-body"> 
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name:${employees[1].name}:</li>
+                    <li class="list-group-item">ID:${employees[1].id}:</li>
+                    <li class="list-group-item">Email:<a href="mailto:${employees[1].email}"> ${employees[1].email}<a></li>
+                    <li class="list-group-item">GitHub:<a href="https://github.com/garcia2697"> ${employees[1].github}</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+        <div class="card-body"> 
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">Name:${employees[2].name}:</li>
+                    <li class="list-group-item">ID:${employees[2].id}:</li>
+                    <li class="list-group-item">Email:<a href="mailto:${employees[2].email}">${employees[2].email}<a></li>
+                    <li class="list-group-item">School:${employees[2].school}  </li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
     </div>
 
       
@@ -282,22 +285,5 @@ const generateHTML = (employees) => {
   </html>
   `;
     
-    // return `
-    
-  
-  
-    //   <div class="card-body"> 
-    //       <div>
-    //           <ul class="list-group">
-    //             <li class="list-group-item">${index.managerResponses.id}</li>
-    //             <li class="list-group-item">Email:${index.managerResponses.id}</li>
-    //             <li class="list-group-item">Office Number: ${index.managerResponses.id} </li>
-    //           </ul>
-    //       </div>
-    //   </div>
-  
-        
-      
-    // `;
-  };
+};
     

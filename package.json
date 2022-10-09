@@ -1,0 +1,30 @@
+{
+  "name": "employee-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garcia2697/employee-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garcia2697/employee-testing/issues"
+  },
+  "homepage": "https://github.com/garcia2697/employee-testing#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
