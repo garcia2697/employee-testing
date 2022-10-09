@@ -246,8 +246,8 @@ const generateHTML = (employees) => {
         <div class="card-body"> 
             <div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name:${employees[0].name}:</li>
-                    <li class="list-group-item">ID:${employees[0].id}:</li>
+                    <li class="list-group-item">Name:${employees[0].name}</li>
+                    <li class="list-group-item">ID:${employees[0].id}</li>
                     <li class="list-group-item">Email:<a href="mailto:${employees[0].email}">${employees[0].email}<a></li>
                     <li class="list-group-item">Office Number:${employees[0].office}  </li>
                 </ul>
@@ -271,10 +271,10 @@ const generateHTML = (employees) => {
         <div class="card-body"> 
             <div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name:${employees[1].name}:</li>
-                    <li class="list-group-item">ID:${employees[1].id}:</li>
+                    <li class="list-group-item">Name:${employees[1].name}</li>
+                    <li class="list-group-item">ID:${employees[1].id}</li>
                     <li class="list-group-item">Email:<a href="mailto:${employees[1].email}"> ${employees[1].email}<a></li>
-                    <li class="list-group-item">GitHub:<a href="https://github.com/${employees[1].github}"> ${employees[1].github}</li>
+                    <li class="list-group-item">GitHub:<a href="https://github.com/${employees[1].github}"> ${employees[1].github}<a></li>
                 </ul>
             </div>
             <br>
@@ -285,6 +285,7 @@ const generateHTML = (employees) => {
     </div>
 
     <br>
+
     <div class="card " style="width: 18rem;">
         
         
@@ -297,19 +298,20 @@ const generateHTML = (employees) => {
         <div class="card-body"> 
             <div>
                 <ul class="list-group">
-                    <li class="list-group-item">Name:${employees[2].name}:</li>
-                    <li class="list-group-item">ID:${employees[2].id}:</li>
+                    <li class="list-group-item">Name:${employees[2].name}</li>
+                    <li class="list-group-item">ID:${employees[2].id}</li>
                     <li class="list-group-item">Email:<a href="mailto:${employees[2].email}">${employees[2].email}<a></li>
                     <li class="list-group-item">School:${employees[2].school}  </li>
                 </ul>
             </div>
-            <br>
+            
         </div>
 
         
 
     </div>
 
+    
       
   </main>
   </body>
