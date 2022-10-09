@@ -13,7 +13,7 @@
 
 
 ### Description
-Creates a quick employee database. It is currently limited to only 3 people since the main use of the app was to show that profeciancy in unit testing. 
+Creates a quick employee database. It is currently limited to only 3 people since the main use of the app was to show that proficiency  in unit testing. 
 
 User Story
 AS A manager
@@ -31,7 +31,7 @@ Testing was done by using JEST
 
 ### Deployed
 GitHub Repository: https://github.com/garcia2697/employee-testing
-Walk Through Vide:https://drive.google.com/file/d/1nFnDQexKtTAukXi9hze9IJ-BFwXeAs64/view
+Walk Through Video:https://drive.google.com/file/d/1nFnDQexKtTAukXi9hze9IJ-BFwXeAs64/view
 
 
 ### Author
